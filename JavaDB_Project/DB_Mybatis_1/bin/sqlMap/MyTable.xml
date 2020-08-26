@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="MyTable">
+
+    <resultMap id="result" type="MyTable">
+        <!--Database Table Record 구조 정의-->
+        <result property="no" column="no"/>
+        <result property="name" column="name"/>
+        <result property="subjectName" column="subjectName"/>
+        
+    </resultMap>
+    
+    
+    
+    
+    <!--sql 쿼리문 작성-->
+   
+    <select id="selectAll" resultMap="result">SELECT * FROM MYTABLE</select>
+    
+    <!-- insert into (name) value('김철수'); 이렇게 이름 하나만 입력하는 경우-->
+    <insert id="insert" parameterType="String">INSERT INTO MYTABLE (name) VALUES (#{name})</insert>
+ 	<!-- insert into (name, subjectName) value('김철수', '물리학'); 이렇게 이름 하나만 입력하는 경우-->
+ 	<insert id="insertNameSubjectName" parameterType="MyTable">
+ 		INSERT INTO MYTABLE (name, subjectName) values (#{name}, #{subjectName})</insert>
+ 	
+ 	
+    </mapper>

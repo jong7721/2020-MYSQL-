@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ 
+<configuration>
+	<!--DB Table Record 구조를 정의한 DTO 클래스명-->
+    <typeAliases>
+        <typeAlias alias="MyTable" type="dto.MyTableDTO"/>        
+    </typeAliases>
+    
+    <!--Database 연결을 위한 설정-->
+    <environments default="development">
+        <environment id="development">
+          <transactionManager type="JDBC"/>
+            <!--  connecting to Local MySql -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://@localhost:3306/javaDB?characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true"/>
+                <property name="username" value="javaUser"/>
+                <property name="password" value="java1234"/>
+            </dataSource>
+       </environment>
+    </environments>
+    
+    <!--DTO 클래스와 sql 쿼리문을 맵핑하기위한 파라메터 설정-->
+    <mappers>
+       <mapper resource="sqlMap/MyTable.xml"/>
+    </mappers>
+</configuration>
+

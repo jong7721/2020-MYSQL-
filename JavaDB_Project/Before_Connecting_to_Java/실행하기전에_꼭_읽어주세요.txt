@@ -1,0 +1,6 @@
+실행하기 전에 꼭 읽어주세요!!
+
+first_step은 Local instance MySQL80에서 실행해주세요.
+그 다음 홈에서 second_step의 이미지 파일 순서대로 Connection을 실행해주세요.
+thrid_step은 새로 만들어진 Connection인 javaDB에서 실행해주세요.
+forth_step의 이미지 파일 순서대로 eclipse를 실행해주세요.
